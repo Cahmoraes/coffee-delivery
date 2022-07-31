@@ -7,7 +7,12 @@ export interface IInicialState {
   cartProducts: ICoffee[]
 }
 
-export function cartReducer(state: IInicialState, action: any) {
+interface CartAction {
+  type: ActionTypes
+  payload: ICoffee
+}
+
+export function cartReducer(state: IInicialState, action: CartAction) {
   switch (action.type) {
     case ActionTypes.INCREASE_QUANTITY: {
       const productToIncreaseAmount = action.payload.name
@@ -33,7 +38,6 @@ export function cartReducer(state: IInicialState, action: any) {
       })
     }
     case ActionTypes.DECREASE_QUANTITY: {
-      console.log(action)
       const productToDecreaseAmount = action.payload.name
 
       const existsProductInCartIndex = state.cartProducts.findIndex(

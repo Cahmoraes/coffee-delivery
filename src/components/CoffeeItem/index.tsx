@@ -1,20 +1,14 @@
 import { memo } from 'react'
 import { ICoffee } from '../../contexts/CoffeeContext'
 import { CartButton } from '../CartButton'
-import { MinusIcon, PlusIcon } from '../Icons'
-import { ContainerCoffeeItem, PriceContainer, ItemCount } from './styles'
+import { ItemCount } from '../ItemCount'
+import { ContainerCoffeeItem, PriceContainer } from './styles'
 
 interface CoffeeItemProps {
   coffee: ICoffee
-  onIncreaseProduct: (product: ICoffee) => void
-  onDecreaseProduct: (product: ICoffee) => void
 }
 
-export function CoffeeItemComponent({
-  coffee,
-  onIncreaseProduct,
-  onDecreaseProduct,
-}: CoffeeItemProps) {
+export function CoffeeItemComponent({ coffee }: CoffeeItemProps) {
   return (
     <ContainerCoffeeItem>
       <img src={coffee.img_url} alt={coffee.name} />
@@ -34,15 +28,7 @@ export function CoffeeItemComponent({
           <span className="price">{coffee.formatted_value}</span>
         </div>
 
-        <ItemCount>
-          <button onClick={() => onDecreaseProduct(coffee)}>
-            <MinusIcon />
-          </button>
-          <span>{coffee.amount}</span>
-          <button onClick={() => onIncreaseProduct(coffee)}>
-            <PlusIcon />
-          </button>
-        </ItemCount>
+        <ItemCount productItem={coffee} />
 
         <CartButton />
       </PriceContainer>
