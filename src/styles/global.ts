@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     --white: #FFFFFF;
     --base-card: #F3F2F2;
     --base-button: #E6E5E5;
+    --base-input: #EEEDED;
   }
 
   * {

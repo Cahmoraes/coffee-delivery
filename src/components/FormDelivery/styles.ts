@@ -4,7 +4,7 @@ export const FormDeliveryContainer = styled.div`
   width: min(64rem, 100%);
 `
 
-export const Form = styled.form`
+export const FormSection = styled.div`
   background: var(--base-card);
   border-radius: 6px;
   padding: 4rem;
@@ -38,3 +38,5 @@ export const FormHeader = styled.header`
     fill: var(--yellow-dark);
   }
 `
+
+export const FormContent = styled.form``
