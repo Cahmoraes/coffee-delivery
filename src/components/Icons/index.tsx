@@ -182,3 +182,34 @@ export function MapPinLineIcon() {
     </svg>
   )
 }
+
+export function TrashIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M4 7a1 1 0 011-1h22a1 1 0 110 2H5a1 1 0 01-1-1zM13 12a1 1 0 011 1v8a1 1 0 11-2 0v-8a1 1 0 011-1zM19 12a1 1 0 011 1v8a1 1 0 11-2 0v-8a1 1 0 011-1z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M7 6a1 1 0 011 1v19h16V7a1 1 0 112 0v19a2 2 0 01-2 2H8a2 2 0 01-2-2V7a1 1 0 011-1z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M10.879 2.879A3 3 0 0113 2h6a3 3 0 013 3v2a1 1 0 11-2 0V5a1 1 0 00-1-1h-6a1 1 0 00-1 1v2a1 1 0 11-2 0V5a3 3 0 01.879-2.121z"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  )
+}
