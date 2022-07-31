@@ -33,7 +33,11 @@ export function cartReducer(state: IInicialState, action: CartAction) {
         if (existsProductInCartIndex > -1) {
           draft.cartProducts[existsProductInCartIndex].amount += 1
         } else {
-          draft.cartProducts.push(action.payload)
+          const newProductItem = {
+            ...action.payload,
+            amount: action.payload.amount + 1,
+          }
+          draft.cartProducts.push(newProductItem)
         }
       })
     }
@@ -45,25 +49,39 @@ export function cartReducer(state: IInicialState, action: CartAction) {
       )
 
       return produce(state, (draft) => {
-        const productIndex = draft.catalogProducts.findIndex(
+        const productCatalogIndex = draft.catalogProducts.findIndex(
           (product) => product.name === productToDecreaseAmount,
         )
 
-        if (productIndex > -1) {
-          if (draft.catalogProducts[productIndex].amount > 0) {
-            draft.catalogProducts[productIndex].amount -= 1
-          } else {
-            draft.catalogProducts[productIndex].amount = 0
-          }
-        }
-
-        if (existsProductInCartIndex > -1) {
-          if (draft.cartProducts[existsProductInCartIndex].amount > 0) {
-            draft.cartProducts[existsProductInCartIndex].amount -= 1
-          } else {
+        if (productCatalogIndex > -1) {
+          if (draft.catalogProducts[productCatalogIndex].amount - 1 === 0) {
+            draft.catalogProducts[productCatalogIndex].amount = 0
             draft.cartProducts.splice(existsProductInCartIndex, 1)
           }
+
+          if (draft.catalogProducts[productCatalogIndex].amount > 0) {
+            draft.catalogProducts[productCatalogIndex].amount -= 1
+            draft.cartProducts[existsProductInCartIndex].amount -= 1
+          }
         }
+      })
+    }
+    case ActionTypes.REMOVE_PRODUCT_CART: {
+      const productNameToRemoveFromCart = action.payload.name
+
+      const productIndexToRemoveFromCart = state.cartProducts.findIndex(
+        (product) => product.name === productNameToRemoveFromCart,
+      )
+
+      const productIndexToClearFromCatalog = state.catalogProducts.findIndex(
+        (product) => product.name === productNameToRemoveFromCart,
+      )
+
+      if (productIndexToRemoveFromCart < 0) return state
+
+      return produce(state, (draft) => {
+        draft.cartProducts.splice(productIndexToRemoveFromCart, 1)
+        draft.catalogProducts[productIndexToClearFromCatalog].amount = 0
       })
     }
     default:

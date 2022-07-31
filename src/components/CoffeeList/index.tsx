@@ -9,7 +9,7 @@ export function CoffeeList() {
     <ContainerCoffeeList>
       <h3>Nossos cafés</h3>
       <ul>
-        {coffeeState.catalogProducts.map((coffee) => (
+        {coffeeState?.catalogProducts.map((coffee) => (
           <CoffeeItem key={coffee.name} coffee={coffee} />
         ))}
       </ul>

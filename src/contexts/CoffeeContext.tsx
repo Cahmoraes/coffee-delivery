@@ -2,6 +2,7 @@ import { createContext, ReactNode, useCallback, useReducer } from 'react'
 import {
   decreaseQuantityAction,
   increaseQuantityAction,
+  removeProductCartAction,
 } from '../reducers/cart/actions'
 import { cartReducer, IInicialState } from '../reducers/cart/reducer'
 import { Categories, coffeeList as seeders } from './seeders'
@@ -20,6 +21,7 @@ interface CoffeeContextData {
   coffeeState: IInicialState
   increaseProdutoAmount: (product: ICoffee) => void
   decreaseProductAmount: (product: ICoffee) => void
+  removeProductItemFromCart: (product: ICoffee) => void
 }
 
 export const CoffeeContext = createContext({} as CoffeeContextData)
@@ -36,8 +38,6 @@ export function CoffeeProvider({ children }: CoffeeProviderProps) {
       cartProducts: [] as ICoffee[],
     },
     (initialState) => {
-      console.log('aqui')
-      console.log(initialState)
       return {
         ...initialState,
         catalogProducts: seeders.map((product) => ({
@@ -57,12 +57,17 @@ export function CoffeeProvider({ children }: CoffeeProviderProps) {
     dispatch(decreaseQuantityAction(product))
   }, [])
 
+  const removeProductItemFromCart = useCallback((product: ICoffee) => {
+    dispatch(removeProductCartAction(product))
+  }, [])
+
   return (
     <CoffeeContext.Provider
       value={{
         coffeeState,
         increaseProdutoAmount,
         decreaseProductAmount,
+        removeProductItemFromCart,
       }}
     >
       {children}
