@@ -9,9 +9,13 @@ export const PaymentMethodButtonContainer = styled.button`
   border: 0;
   background: var(--base-button);
   transition: filter 0.2s;
-  max-width: 178.67px;
+  max-width: 100%;
   flex: 1;
   white-space: nowrap;
+
+  @media (min-width: 768px) {
+    max-width: 178.67px;
+  }
 
   &.is-active {
     border: 1px solid var(--purple);
