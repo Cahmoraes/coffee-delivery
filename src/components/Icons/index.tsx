@@ -213,3 +213,28 @@ export function TrashIcon() {
     </svg>
   )
 }
+
+export function CurrencyDollarIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M16 2a1 1 0 011 1v26a1 1 0 11-2 0V3a1 1 0 011-1z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M9.257 6.757A6 6 0 0113.5 5H18a6 6 0 016 6 1 1 0 11-2 0 4 4 0 00-4-4h-4.5a4 4 0 100 8H19a6 6 0 110 12h-6a6 6 0 01-6-6 1 1 0 112 0 4 4 0 004 4h6a4 4 0 100-8h-5.5A6 6 0 019.257 6.757z"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  )
+}

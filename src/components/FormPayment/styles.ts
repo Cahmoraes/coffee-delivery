@@ -1,17 +1,10 @@
 import styled from 'styled-components'
 
-export const FormDeliveryContainer = styled.div`
-  width: min(64rem, 100%);
-`
-
-export const FormSection = styled.div`
+export const FormPaymentContainer = styled.div`
   background: var(--base-card);
   border-radius: 6px;
   padding: 4rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.2rem;
 `
-
 export const FormHeader = styled.header`
   display: flex;
   gap: 0.8rem;
@@ -36,6 +29,6 @@ export const FormHeader = styled.header`
   }
 
   path {
-    fill: var(--yellow-dark);
+    fill: var(--purple);
   }
 `

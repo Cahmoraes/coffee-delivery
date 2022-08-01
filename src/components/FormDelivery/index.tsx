@@ -1,15 +1,11 @@
 import { MapPinLineIcon } from '../Icons'
-import { useForm } from 'react-hook-form'
-import {
-  FormDeliveryContainer,
-  FormSection,
-  FormHeader,
-  FormContent,
-} from './styles'
-import { Input } from '../Input'
+import { useForm, FormProvider } from 'react-hook-form'
+import { FormDeliveryContainer, FormSection, FormHeader } from './styles'
+import { FormContent } from './FormContent'
+import { FormPayment } from '../FormPayment'
 
 export function FormDelivery() {
-  const { handleSubmit, register } = useForm({
+  const methods = useForm({
     defaultValues: {
       cep: '',
       rua: '',
@@ -21,7 +17,9 @@ export function FormDelivery() {
     },
   })
 
-  function handleCheckoutOrder() {}
+  function handleCheckoutOrder(data: any) {
+    console.log(data)
+  }
 
   return (
     <FormDeliveryContainer>
@@ -34,10 +32,12 @@ export function FormDelivery() {
             <p>Informe o endereço onde deseja receber seu pedido</p>
           </div>
         </FormHeader>
-        <FormContent onSubmit={handleSubmit(handleCheckoutOrder)}>
-          <Input placeholder="CEP" {...register('cep')} />
-        </FormContent>
+        <FormProvider {...methods}>
+          <FormContent onSubmitNewAddress={handleCheckoutOrder} />
+        </FormProvider>
       </FormSection>
+
+      <FormPayment />
     </FormDeliveryContainer>
   )
 }

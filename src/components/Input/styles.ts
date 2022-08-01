@@ -11,6 +11,6 @@ export const InputContainer = styled.input`
   transition: all 0.2s;
 
   &:focus {
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
   }
 `
