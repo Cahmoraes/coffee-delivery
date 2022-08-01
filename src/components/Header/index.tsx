@@ -12,7 +12,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <nav>
-        <Link to="/coffee-delivery">
+        <Link to="/coffee-delivery/">
           <img src={logoImg} alt="Café Delivery" />
         </Link>
 
