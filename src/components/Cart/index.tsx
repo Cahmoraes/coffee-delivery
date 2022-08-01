@@ -10,7 +10,7 @@ export function Cart({ count }: CartProps) {
   const navigate = useNavigate()
 
   function handleNavigateToCheckout() {
-    navigate('/checkout')
+    navigate('/coffee-delivery/checkout')
   }
 
   return (

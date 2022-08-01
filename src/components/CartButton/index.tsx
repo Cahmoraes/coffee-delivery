@@ -6,7 +6,7 @@ export function CartButton() {
   const navigate = useNavigate()
 
   function handleNavigateToCheckout() {
-    navigate('/checkout')
+    navigate('/coffee-delivery/checkout')
   }
 
   return (
