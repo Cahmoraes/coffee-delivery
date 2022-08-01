@@ -125,7 +125,7 @@ Error generating stack: `+l.message+`
     justify-content: space-between;
     gap: 1.2rem;
   }
-`;function ng(){const{coffeeState:e}=to(),t=e==null?void 0:e.cartProducts.length;return x(tg,{children:q("nav",{children:[x(lm,{to:"/coffee-delivery",children:x("img",{src:Hm,alt:"Caf\xE9 Delivery"})}),q("div",{className:"nav-group",children:[x(eg,{location:"Porto Alegre, RS"}),x(qv,{count:t})]})]})})}const rg=se.div`
+`;function ng(){const{coffeeState:e}=to(),t=e==null?void 0:e.cartProducts.length;return x(tg,{children:q("nav",{children:[x(lm,{to:"/coffee-delivery/",children:x("img",{src:Hm,alt:"Caf\xE9 Delivery"})}),q("div",{className:"nav-group",children:[x(eg,{location:"Porto Alegre, RS"}),x(qv,{count:t})]})]})})}const rg=se.div`
   width: min(100%, 1120px);
   margin: 0 auto;
   padding: 0 3.2rem 3.2rem;
@@ -591,7 +591,7 @@ Error generating stack: `+l.message+`
     line-height: 2.08rem;
     font-weight: 400;
   }
-`;function ji({text:e,element:t,variant:n="base"}){return q(sy,{variant:n,children:[x("div",{children:t}),x("span",{children:e})]})}function cy(){return q(ly,{children:[q("div",{children:[x("h1",{children:"Encontre o caf\xE9 perfeito para qualquer hora do dia"}),x("p",{children:"Com o Coffee Delivery voc\xEA recebe seu caf\xE9 onde estiver, a qualquer hora"}),q(oy,{children:[x(ji,{variant:"yellow-dark",element:x(vs,{}),text:"Compra simples e segura"}),x(ji,{variant:"base",element:x(Qm,{}),text:"Embalagem mant\xE9m o caf\xE9 intacto"}),x(ji,{variant:"yellow",element:x(Ym,{}),text:"Entrega r\xE1pida e rastreada"}),x(ji,{variant:"purple",element:x(Km,{}),text:"O caf\xE9 chega fresquinho at\xE9 voc\xEA"})]})]}),x("div",{children:x("img",{src:uy,alt:"Copo de caf\xE9"})})]})}function fy(){return q(Bm,{children:[x(cy,{}),x(iy,{})]})}function dy(){return x(em,{children:q(qi,{path:"/coffee-delivery",element:x(ig,{}),children:[x(qi,{path:"/coffee-delivery",element:x(fy,{})}),x(qi,{path:"/coffee-delivery/checkout",element:x(Zg,{})})]})})}const py=Zv`
+`;function ji({text:e,element:t,variant:n="base"}){return q(sy,{variant:n,children:[x("div",{children:t}),x("span",{children:e})]})}function cy(){return q(ly,{children:[q("div",{children:[x("h1",{children:"Encontre o caf\xE9 perfeito para qualquer hora do dia"}),x("p",{children:"Com o Coffee Delivery voc\xEA recebe seu caf\xE9 onde estiver, a qualquer hora"}),q(oy,{children:[x(ji,{variant:"yellow-dark",element:x(vs,{}),text:"Compra simples e segura"}),x(ji,{variant:"base",element:x(Qm,{}),text:"Embalagem mant\xE9m o caf\xE9 intacto"}),x(ji,{variant:"yellow",element:x(Ym,{}),text:"Entrega r\xE1pida e rastreada"}),x(ji,{variant:"purple",element:x(Km,{}),text:"O caf\xE9 chega fresquinho at\xE9 voc\xEA"})]})]}),x("div",{children:x("img",{src:uy,alt:"Copo de caf\xE9"})})]})}function fy(){return q(Bm,{children:[x(cy,{}),x(iy,{})]})}function dy(){return x(em,{children:q(qi,{path:"/coffee-delivery/",element:x(ig,{}),children:[x(qi,{path:"/coffee-delivery/",element:x(fy,{})}),x(qi,{path:"/coffee-delivery/checkout",element:x(Zg,{})})]})})}const py=Zv`
   :root {
     --yellow-dark: #C47F17;
     --yellow: #DBAC2C;
