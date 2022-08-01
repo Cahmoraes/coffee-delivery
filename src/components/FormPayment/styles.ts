@@ -37,5 +37,11 @@ export const FormHeader = styled.header`
 export const FormMethods = styled.div`
   margin-top: 3.2rem;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: 1.2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `

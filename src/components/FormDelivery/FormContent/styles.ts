@@ -4,34 +4,36 @@ export const FormContentContainer = styled.form`
   margin-top: 3.2rem;
   gap: 1.6rem;
   display: grid;
-  grid-template-columns: 200px 212px 60px;
 
-  .cep {
-    grid-area: 1 / 1 / 2/ 2;
-  }
+  @media (min-width: 768px) {
+    grid-template-columns: 200px 212px 60px;
+    .cep {
+      grid-area: 1 / 1 / 2/ 2;
+    }
 
-  .rua {
-    grid-area: 2 / 1 / 3 / -1;
-  }
+    .rua {
+      grid-area: 2 / 1 / 3 / -1;
+    }
 
-  .numero {
-    grid-area: 3 / 1 / 4 / 2;
-  }
+    .numero {
+      grid-area: 3 / 1 / 4 / 2;
+    }
 
-  .complemento {
-    grid-area: 3 / 2 / 4 / -1;
-  }
+    .complemento {
+      grid-area: 3 / 2 / 4 / -1;
+    }
 
-  .bairro {
-    grid-area: 4 / 1 / 5 / 2;
-  }
+    .bairro {
+      grid-area: 4 / 1 / 5 / 2;
+    }
 
-  .cidade {
-    grid-area: 4 / 2 / 5 / 3;
-  }
+    .cidade {
+      grid-area: 4 / 2 / 5 / 3;
+    }
 
-  .uf {
-    grid-area: 4 / 3 / 5 / -1;
+    .uf {
+      grid-area: 4 / 3 / 5 / -1;
+    }
   }
 `
 
@@ -46,5 +48,9 @@ export const RegisterButton = styled.button`
   padding: 1.2rem;
   border: 0;
   width: 100%;
-  grid-area: 5 / 1 / 6 / -1;
+  margin-top: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-area: 5 / 1 / 6 / -1;
+  }
 `

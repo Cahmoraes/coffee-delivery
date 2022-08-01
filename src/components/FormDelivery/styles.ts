@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const FormDeliveryContainer = styled.div`
-  width: min(64rem, 100%);
+  width: min(58rem, 100%);
 `
 
 export const FormSection = styled.div`
