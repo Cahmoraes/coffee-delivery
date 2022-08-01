@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const FormPaymentContainer = styled.div`
+  font-family: 'Roboto', sans-serif;
   background: var(--base-card);
   border-radius: 6px;
   padding: 4rem;
@@ -31,4 +32,10 @@ export const FormHeader = styled.header`
   path {
     fill: var(--purple);
   }
+`
+
+export const FormMethods = styled.div`
+  margin-top: 3.2rem;
+  display: flex;
+  gap: 1.2rem;
 `

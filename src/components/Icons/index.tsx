@@ -238,3 +238,96 @@ export function CurrencyDollarIcon() {
     </svg>
   )
 }
+
+export function CreditCardIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M2 8a2 2 0 012-2h24a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V8zm26 0H4v16h24V8z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M20 21a1 1 0 011-1h4a1 1 0 110 2h-4a1 1 0 01-1-1zM14 21a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1zM2 12.113a1 1 0 011-1h26a1 1 0 110 2H3a1 1 0 01-1-1z"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  )
+}
+
+export function BankIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M15.476 3.148a1 1 0 011.048 0l13 8A1 1 0 0129 13H3a1 1 0 01-.524-1.852l13-8zM6.533 11h18.934L16 5.174 6.533 11z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M7 11a1 1 0 011 1v10a1 1 0 11-2 0V12a1 1 0 011-1zM13 11a1 1 0 011 1v10a1 1 0 11-2 0V12a1 1 0 011-1zM19 11a1 1 0 011 1v10a1 1 0 11-2 0V12a1 1 0 011-1zM25 11a1 1 0 011 1v10a1 1 0 11-2 0V12a1 1 0 011-1z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M3 22a1 1 0 011-1h24a1 1 0 110 2H4a1 1 0 01-1-1zM1 26a1 1 0 011-1h28a1 1 0 010 2H2a1 1 0 01-1-1z"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  )
+}
+
+export function MoneyIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M1 9a2 2 0 012-2h26a2 2 0 012 2v14a2 2 0 01-2 2H3a2 2 0 01-2-2V9zm28 0H3v14h26V9z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M16 13a3 3 0 100 6 3 3 0 000-6zm-5 3a5 5 0 1110 0 5 5 0 01-10 0zM21.247 7.342a1 1 0 011.412-.095l8 7a1 1 0 11-1.317 1.506l-8-7a1 1 0 01-.095-1.411z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M30.753 16.341a1 1 0 01-.095 1.412l-8 7a1 1 0 11-1.317-1.506l8-7a1 1 0 011.412.095zM10.753 7.342a1 1 0 01-.095 1.41l-8 7a1 1 0 11-1.316-1.505l8-7a1 1 0 011.41.095z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#574F4D"
+        fillRule="evenodd"
+        d="M1.247 16.341a1 1 0 011.412-.094l8 7a1 1 0 11-1.317 1.506l-8-7a1 1 0 01-.095-1.412z"
+        clipRule="evenodd"
+      ></path>
+    </svg>
+  )
+}

@@ -9,6 +9,7 @@ export const InputContainer = styled.input`
   color: var(--base-label);
   outline: none;
   transition: all 0.2s;
+  color: var(--base-text);
 
   &:focus {
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
