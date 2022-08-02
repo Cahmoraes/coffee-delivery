@@ -2,6 +2,7 @@ import { createContext, ReactNode, useCallback, useReducer } from 'react'
 import {
   decreaseQuantityAction,
   increaseQuantityAction,
+  registerCostumerAddressAction,
   removeProductCartAction,
 } from '../reducers/cart/actions'
 import { cartReducer, IInicialState } from '../reducers/cart/reducer'
@@ -17,11 +18,22 @@ export interface ICoffee {
   formatted_value: string
 }
 
+export interface ICostumerAddress {
+  cep: string
+  rua: string
+  numero: string
+  complemento: string
+  bairro: string
+  cidade: string
+  uf: string
+}
+
 interface CoffeeContextData {
   coffeeState: IInicialState
   increaseProdutoAmount: (product: ICoffee) => void
   decreaseProductAmount: (product: ICoffee) => void
   removeProductItemFromCart: (product: ICoffee) => void
+  registerCostumerAddress: (costumerAddress: ICostumerAddress) => void
 }
 
 export const CoffeeContext = createContext({} as CoffeeContextData)
@@ -36,6 +48,7 @@ export function CoffeeProvider({ children }: CoffeeProviderProps) {
     {
       catalogProducts: [] as ICoffee[],
       cartProducts: [] as ICoffee[],
+      customerAddress: {} as ICostumerAddress,
     },
     (initialState) => {
       return {
@@ -61,6 +74,13 @@ export function CoffeeProvider({ children }: CoffeeProviderProps) {
     dispatch(removeProductCartAction(product))
   }, [])
 
+  const registerCostumerAddress = useCallback(
+    (costumerAddress: ICostumerAddress) => {
+      dispatch(registerCostumerAddressAction(costumerAddress))
+    },
+    [],
+  )
+
   return (
     <CoffeeContext.Provider
       value={{
@@ -68,6 +88,7 @@ export function CoffeeProvider({ children }: CoffeeProviderProps) {
         increaseProdutoAmount,
         decreaseProductAmount,
         removeProductItemFromCart,
+        registerCostumerAddress,
       }}
     >
       {children}

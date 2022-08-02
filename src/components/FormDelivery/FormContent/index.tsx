@@ -8,6 +8,7 @@ interface FormContentProps {
 
 export function FormContent({ onSubmitNewAddress }: FormContentProps) {
   const { register, handleSubmit } = useFormContext()
+
   return (
     <FormContentContainer onSubmit={handleSubmit(onSubmitNewAddress)}>
       <Input className="cep" placeholder="CEP" {...register('cep')} />

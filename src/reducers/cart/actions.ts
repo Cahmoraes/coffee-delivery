@@ -1,9 +1,10 @@
-import { ICoffee } from '../../contexts/CoffeeContext'
+import { ICoffee, ICostumerAddress } from '../../contexts/CoffeeContext'
 
 export enum ActionTypes {
   'INCREASE_QUANTITY' = 'INCREASE_QUANTITY',
   'DECREASE_QUANTITY' = 'DECREASE_QUANTITY',
-  'REMOVE_PRODUCT_CART' = 'REMOVE_PRODUCT_CART'
+  'REMOVE_PRODUCT_CART' = 'REMOVE_PRODUCT_CART',
+  'REGISTER_COSTUMER_ADDRESS' = 'REGISTER_COSTUMER_ADDRESS'
 }
 
 export const increaseQuantityAction = (payload: ICoffee) => ({
@@ -18,5 +19,10 @@ export const decreaseQuantityAction = (payload: ICoffee) => ({
 
 export const removeProductCartAction = (payload: ICoffee) => ({
   type: ActionTypes.REMOVE_PRODUCT_CART,
+  payload
+})
+
+export const registerCostumerAddressAction = (payload: ICostumerAddress) => ({
+  type: ActionTypes.REGISTER_COSTUMER_ADDRESS,
   payload
 })

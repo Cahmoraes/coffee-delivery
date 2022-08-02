@@ -1,20 +1,30 @@
-import { ICoffee } from '../../contexts/CoffeeContext'
+import { ICoffee, ICostumerAddress } from '../../contexts/CoffeeContext'
 import { ActionTypes } from './actions'
 import { produce } from 'immer'
 
 export interface IInicialState {
   catalogProducts: ICoffee[]
   cartProducts: ICoffee[]
+  customerAddress: ICostumerAddress
 }
 
 interface CartAction {
   type: ActionTypes
-  payload: ICoffee
+  payload: ICoffee | ICostumerAddress
+}
+
+function instanceOfICoffee(object: any): object is ICoffee {
+  return Reflect.has(object, 'categories')
+}
+
+function instanceOfICostumerData(object: any): object is ICostumerAddress {
+  return Reflect.has(object, 'cep')
 }
 
 export function cartReducer(state: IInicialState, action: CartAction) {
   switch (action.type) {
     case ActionTypes.INCREASE_QUANTITY: {
+      if (!instanceOfICoffee(action.payload)) return state
       const productToIncreaseAmount = action.payload.name
 
       const existsProductInCartIndex = state.cartProducts.findIndex(
@@ -22,6 +32,8 @@ export function cartReducer(state: IInicialState, action: CartAction) {
       )
 
       return produce(state, (draft) => {
+        if (!instanceOfICoffee(action.payload)) return state
+
         const productIndex = draft.catalogProducts.findIndex(
           (product) => product.name === productToIncreaseAmount,
         )
@@ -42,6 +54,7 @@ export function cartReducer(state: IInicialState, action: CartAction) {
       })
     }
     case ActionTypes.DECREASE_QUANTITY: {
+      if (!instanceOfICoffee(action.payload)) return state
       const productToDecreaseAmount = action.payload.name
 
       const existsProductInCartIndex = state.cartProducts.findIndex(
@@ -67,6 +80,7 @@ export function cartReducer(state: IInicialState, action: CartAction) {
       })
     }
     case ActionTypes.REMOVE_PRODUCT_CART: {
+      if (!instanceOfICoffee(action.payload)) return state
       const productNameToRemoveFromCart = action.payload.name
 
       const productIndexToRemoveFromCart = state.cartProducts.findIndex(
@@ -82,6 +96,12 @@ export function cartReducer(state: IInicialState, action: CartAction) {
       return produce(state, (draft) => {
         draft.cartProducts.splice(productIndexToRemoveFromCart, 1)
         draft.catalogProducts[productIndexToClearFromCatalog].amount = 0
+      })
+    }
+    case ActionTypes.REGISTER_COSTUMER_ADDRESS: {
+      return produce(state, (draft) => {
+        if (!instanceOfICostumerData(action.payload)) return state
+        draft.customerAddress = action.payload
       })
     }
     default:

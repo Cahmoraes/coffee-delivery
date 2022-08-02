@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { useCoffee } from '../../hooks/useCoffee'
 import { TrashIcon } from '../Icons'
 import { ItemCount } from '../ItemCount'
@@ -26,11 +27,16 @@ function convertToPrice(orderTotal: number) {
 
 export function Summary() {
   const { coffeeState, removeProductItemFromCart } = useCoffee()
+  const navigate = useNavigate()
 
   const priceTotal = coffeeState?.cartProducts.reduce(
     (total, product) => total + product.value * product.amount,
     0,
   )
+
+  function handleConfirmOrder() {
+    navigate('/coffee-delivery/order-details')
+  }
 
   const priceDelivery = 3.5
   const orderTotal = priceTotal + priceDelivery
@@ -80,7 +86,9 @@ export function Summary() {
           </div>
         </SummaryDetails>
 
-        <ConfirmCheckoutButton>Confirmar pedido</ConfirmCheckoutButton>
+        <ConfirmCheckoutButton onClick={handleConfirmOrder}>
+          Confirmar pedido
+        </ConfirmCheckoutButton>
       </div>
     </SummaryContainer>
   )

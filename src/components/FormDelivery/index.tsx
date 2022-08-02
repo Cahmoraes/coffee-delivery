@@ -1,10 +1,15 @@
+import { useCallback } from 'react'
 import { MapPinLineIcon } from '../Icons'
 import { useForm, FormProvider } from 'react-hook-form'
 import { FormDeliveryContainer, FormSection, FormHeader } from './styles'
 import { FormContent } from './FormContent'
 import { FormPayment } from '../FormPayment'
+import { useCoffee } from '../../hooks/useCoffee'
+import { ICostumerAddress } from '../../contexts/CoffeeContext'
 
 export function FormDelivery() {
+  const { registerCostumerAddress } = useCoffee()
+
   const methods = useForm({
     defaultValues: {
       cep: '',
@@ -17,9 +22,12 @@ export function FormDelivery() {
     },
   })
 
-  function handleCheckoutOrder(data: any) {
-    console.log(data)
-  }
+  const handleCheckoutOrder = useCallback(
+    (data: ICostumerAddress) => {
+      registerCostumerAddress(data)
+    },
+    [registerCostumerAddress],
+  )
 
   return (
     <FormDeliveryContainer>
