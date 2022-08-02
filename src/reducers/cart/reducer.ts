@@ -13,11 +13,11 @@ interface CartAction {
   payload: ICoffee | ICostumerAddress
 }
 
-function instanceOfICoffee(object: any): object is ICoffee {
+function instanceOfICoffee(object: Object): object is ICoffee {
   return Reflect.has(object, 'categories')
 }
 
-function instanceOfICostumerData(object: any): object is ICostumerAddress {
+function instanceOfICostumerData(object: Object): object is ICostumerAddress {
   return Reflect.has(object, 'cep')
 }
 
