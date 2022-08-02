@@ -25,6 +25,7 @@ export const ItemCountContainer = styled.div`
   svg {
     width: 1.4rem;
     height: 1.4rem;
+    flex-shrink: 0;
   }
 
   path {

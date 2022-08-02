@@ -5,8 +5,13 @@ export const SummaryContainer = styled.div`
 
   .container {
     background: var(--base-card);
-    padding: 4rem;
     margin-top: 1.5rem;
+    padding: 2rem;
+    border-radius: 6px;
+
+    @media (min-width: 768px) {
+      padding: 4rem;
+    }
   }
 `
 
@@ -21,33 +26,55 @@ export const ProductItem = styled.div`
   justify-content: space-between;
   padding-bottom: 2.4rem;
   border-bottom: 1px solid var(--base-button);
-  gap: 2rem;
+  gap: 1.4rem;
+
+  @media (min-width: 768px) {
+    gap: 2rem;
+  }
 
   img {
     max-height: 6.4rem;
     max-width: 6.4rem;
   }
 
-  span {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.6rem;
-  }
-
   .content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+
+    > span {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        margin-bottom: 0;
+        font-size: 1.6rem;
+      }
+    }
   }
 
   .price {
     font-weight: 700;
     line-height: 130%;
+    font-size: 1.4rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.6rem;
+    }
   }
 
   .actions {
     display: flex;
+    flex-direction: column;
     gap: 0.8rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
   }
 
   & + & {
@@ -72,6 +99,7 @@ export const RemoveButton = styled.button`
   svg {
     width: 2rem;
     height: 2rem;
+    flex-shrink: 0;
   }
 
   path {

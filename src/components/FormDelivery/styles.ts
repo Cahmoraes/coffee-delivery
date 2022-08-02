@@ -7,9 +7,13 @@ export const FormDeliveryContainer = styled.div`
 export const FormSection = styled.div`
   background: var(--base-card);
   border-radius: 6px;
-  padding: 4rem;
+  padding: 2rem;
   margin-top: 1.5rem;
   margin-bottom: 1.2rem;
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+  }
 `
 
 export const FormHeader = styled.header`
@@ -33,6 +37,7 @@ export const FormHeader = styled.header`
   svg {
     height: 22px;
     width: 22px;
+    flex-shrink: 0;
   }
 
   path {

@@ -21,6 +21,7 @@ export const BadgeContainer = styled.div<BaseContainerProps>`
   svg {
     height: 2rem;
     width: 2rem;
+    flex-shrink: 0;
   }
 
   path {

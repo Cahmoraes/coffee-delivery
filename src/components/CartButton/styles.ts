@@ -12,6 +12,7 @@ export const CartButtonContainer = styled.button`
   svg {
     width: 2rem;
     height: 2rem;
+    flex-shrink: 0;
   }
 
   path {

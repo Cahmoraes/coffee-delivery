@@ -4,7 +4,11 @@ export const FormPaymentContainer = styled.div`
   font-family: 'Roboto', sans-serif;
   background: var(--base-card);
   border-radius: 6px;
-  padding: 4rem;
+  padding: 2rem;
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+  }
 `
 export const FormHeader = styled.header`
   display: flex;
@@ -27,6 +31,7 @@ export const FormHeader = styled.header`
   svg {
     height: 22px;
     width: 22px;
+    flex-shrink: 0;
   }
 
   path {

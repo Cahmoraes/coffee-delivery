@@ -29,6 +29,7 @@ export const PaymentMethodButtonContainer = styled.button`
   svg {
     height: 1.6rem;
     width: 1.6rem;
+    flex-shrink: 0;
   }
 
   path {
