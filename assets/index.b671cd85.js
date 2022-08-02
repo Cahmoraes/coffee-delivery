@@ -134,9 +134,13 @@ Error generating stack: `+l.message+`
 `,Ag=se.div`
   background: var(--base-card);
   border-radius: 6px;
-  padding: 4rem;
+  padding: 2rem;
   margin-top: 1.5rem;
   margin-bottom: 1.2rem;
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+  }
 `,Rg=se.header`
   display: flex;
   gap: 0.8rem;
@@ -158,6 +162,7 @@ Error generating stack: `+l.message+`
   svg {
     height: 22px;
     width: 22px;
+    flex-shrink: 0;
   }
 
   path {
@@ -257,6 +262,7 @@ Error generating stack: `+l.message+`
   svg {
     height: 1.6rem;
     width: 1.6rem;
+    flex-shrink: 0;
   }
 
   path {
@@ -273,7 +279,11 @@ Error generating stack: `+l.message+`
   font-family: 'Roboto', sans-serif;
   background: var(--base-card);
   border-radius: 6px;
-  padding: 4rem;
+  padding: 2rem;
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+  }
 `,$g=se.header`
   display: flex;
   gap: 0.8rem;
@@ -295,6 +305,7 @@ Error generating stack: `+l.message+`
   svg {
     height: 22px;
     width: 22px;
+    flex-shrink: 0;
   }
 
   path {
@@ -335,6 +346,7 @@ Error generating stack: `+l.message+`
   svg {
     width: 1.4rem;
     height: 1.4rem;
+    flex-shrink: 0;
   }
 
   path {
@@ -345,8 +357,13 @@ Error generating stack: `+l.message+`
 
   .container {
     background: var(--base-card);
-    padding: 4rem;
     margin-top: 1.5rem;
+    padding: 2rem;
+    border-radius: 6px;
+
+    @media (min-width: 768px) {
+      padding: 4rem;
+    }
   }
 `,Ug=se.ul`
   display: flex;
@@ -357,33 +374,55 @@ Error generating stack: `+l.message+`
   justify-content: space-between;
   padding-bottom: 2.4rem;
   border-bottom: 1px solid var(--base-button);
-  gap: 2rem;
+  gap: 1.4rem;
+
+  @media (min-width: 768px) {
+    gap: 2rem;
+  }
 
   img {
     max-height: 6.4rem;
     max-width: 6.4rem;
   }
 
-  span {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.6rem;
-  }
-
   .content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
+
+    > span {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        margin-bottom: 0;
+        font-size: 1.6rem;
+      }
+    }
   }
 
   .price {
     font-weight: 700;
     line-height: 130%;
+    font-size: 1.4rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.6rem;
+    }
   }
 
   .actions {
     display: flex;
+    flex-direction: column;
     gap: 0.8rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
   }
 
   & + & {
@@ -406,6 +445,7 @@ Error generating stack: `+l.message+`
   svg {
     width: 2rem;
     height: 2rem;
+    flex-shrink: 0;
   }
 
   path {
@@ -461,6 +501,7 @@ Error generating stack: `+l.message+`
   svg {
     width: 2rem;
     height: 2rem;
+    flex-shrink: 0;
   }
 
   path {
@@ -602,6 +643,7 @@ Error generating stack: `+l.message+`
   svg {
     height: 2rem;
     width: 2rem;
+    flex-shrink: 0;
   }
 
   path {
@@ -648,6 +690,10 @@ Error generating stack: `+l.message+`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  @media (max-width: 768) {
+    font-size: 56.3%;
   }
 
   html {
