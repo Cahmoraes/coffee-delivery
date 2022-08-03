@@ -1,16 +1,17 @@
 import { ICoffee, ICostumerAddress } from '../../contexts/CoffeeContext'
-import { ActionTypes } from './actions'
+import { ActionTypes, PaymentMethodTypes } from './actions'
 import { produce } from 'immer'
 
 export interface IInicialState {
   catalogProducts: ICoffee[]
   cartProducts: ICoffee[]
   customerAddress: ICostumerAddress
+  paymentMethodSelected: PaymentMethodTypes
 }
 
 interface CartAction {
   type: ActionTypes
-  payload: ICoffee | ICostumerAddress
+  payload: ICoffee | ICostumerAddress | PaymentMethodTypes
 }
 
 function instanceOfICoffee(object: Object): object is ICoffee {
@@ -19,6 +20,12 @@ function instanceOfICoffee(object: Object): object is ICoffee {
 
 function instanceOfICostumerData(object: Object): object is ICostumerAddress {
   return Reflect.has(object, 'cep')
+}
+
+function isPropertyOfPaymentMethodTypes(
+  param: any,
+): param is PaymentMethodTypes {
+  return Object.values(PaymentMethodTypes).includes(param)
 }
 
 export function cartReducer(state: IInicialState, action: CartAction) {
@@ -102,6 +109,12 @@ export function cartReducer(state: IInicialState, action: CartAction) {
       return produce(state, (draft) => {
         if (!instanceOfICostumerData(action.payload)) return state
         draft.customerAddress = action.payload
+      })
+    }
+    case ActionTypes.SELECT_PAYMENT_METHOD: {
+      return produce(state, (draft) => {
+        if (!isPropertyOfPaymentMethodTypes(action.payload)) return state
+        draft.paymentMethodSelected = action.payload
       })
     }
     default:

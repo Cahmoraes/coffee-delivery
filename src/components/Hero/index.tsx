@@ -19,29 +19,21 @@ export function Hero() {
         </p>
 
         <Badges>
-          <BadgeIcon
-            variant="yellow-dark"
-            element={<ShopCartIcon />}
-            text="Compra simples e segura"
-          />
+          <BadgeIcon variant="yellow-dark" element={<ShopCartIcon />}>
+            Compra simples e segura
+          </BadgeIcon>
 
-          <BadgeIcon
-            variant="base"
-            element={<PackageFillIcon />}
-            text="Embalagem mantém o café intacto"
-          />
+          <BadgeIcon variant="base" element={<PackageFillIcon />}>
+            Embalagem mantém o café intacto
+          </BadgeIcon>
 
-          <BadgeIcon
-            variant="yellow"
-            element={<TimerFillIcon />}
-            text="Entrega rápida e rastreada"
-          />
+          <BadgeIcon variant="yellow" element={<TimerFillIcon />}>
+            Entrega rápida e rastreada
+          </BadgeIcon>
 
-          <BadgeIcon
-            variant="purple"
-            element={<CoffeeFillIcon />}
-            text="O café chega fresquinho até você"
-          />
+          <BadgeIcon variant="purple" element={<CoffeeFillIcon />}>
+            O café chega fresquinho até você
+          </BadgeIcon>
         </Badges>
       </div>
       <div>

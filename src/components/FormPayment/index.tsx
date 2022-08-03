@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useCoffee } from '../../hooks/useCoffee'
+import { PaymentMethodTypes } from '../../reducers/cart/actions'
 import {
   BankIcon,
   CreditCardIcon,
@@ -9,12 +11,14 @@ import { PaymentMethodButton } from '../PaymentMethodButton'
 import { FormHeader, FormMethods, FormPaymentContainer } from './styles'
 
 export function FormPayment() {
-  const [paymentMethodSelected, setPaymentMethodSelected] = useState<
-    number | null
-  >(null)
+  const [paymentMethodSelected, setPaymentMethodSelected] =
+    useState<PaymentMethodTypes>()
 
-  function handleSelectPaymentMethod(paymentMethodId: number) {
-    setPaymentMethodSelected(paymentMethodId)
+  const { selectPaymentMethod } = useCoffee()
+
+  function handleSelectPaymentMethod(paymentMethodType: PaymentMethodTypes) {
+    setPaymentMethodSelected(paymentMethodType)
+    selectPaymentMethod(paymentMethodType)
   }
 
   return (
@@ -30,24 +34,30 @@ export function FormPayment() {
       </FormHeader>
       <FormMethods>
         <PaymentMethodButton
-          active={paymentMethodSelected === 0}
+          active={paymentMethodSelected === PaymentMethodTypes.CREDIT_CARD}
           icon={<CreditCardIcon />}
           label="Cartão de crédito"
-          onSelectPaymentMethod={() => handleSelectPaymentMethod(0)}
+          onSelectPaymentMethod={() =>
+            handleSelectPaymentMethod(PaymentMethodTypes.CREDIT_CARD)
+          }
         />
 
         <PaymentMethodButton
-          active={paymentMethodSelected === 1}
+          active={paymentMethodSelected === PaymentMethodTypes.DEBIT_CARD}
           icon={<BankIcon />}
           label="Cartão de débito"
-          onSelectPaymentMethod={() => handleSelectPaymentMethod(1)}
+          onSelectPaymentMethod={() =>
+            handleSelectPaymentMethod(PaymentMethodTypes.DEBIT_CARD)
+          }
         />
 
         <PaymentMethodButton
-          active={paymentMethodSelected === 2}
+          active={paymentMethodSelected === PaymentMethodTypes.MONEY}
           icon={<MoneyIcon />}
           label="Dinheiro"
-          onSelectPaymentMethod={() => handleSelectPaymentMethod(2)}
+          onSelectPaymentMethod={() =>
+            handleSelectPaymentMethod(PaymentMethodTypes.MONEY)
+          }
         />
       </FormMethods>
     </FormPaymentContainer>

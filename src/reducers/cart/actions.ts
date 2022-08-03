@@ -4,7 +4,15 @@ export enum ActionTypes {
   'INCREASE_QUANTITY' = 'INCREASE_QUANTITY',
   'DECREASE_QUANTITY' = 'DECREASE_QUANTITY',
   'REMOVE_PRODUCT_CART' = 'REMOVE_PRODUCT_CART',
-  'REGISTER_COSTUMER_ADDRESS' = 'REGISTER_COSTUMER_ADDRESS'
+  'REGISTER_COSTUMER_ADDRESS' = 'REGISTER_COSTUMER_ADDRESS',
+  'SELECT_PAYMENT_METHOD' = 'SELECT_PAYMENT_METHOD'
+}
+
+export enum PaymentMethodTypes {
+  'CREDIT_CARD' = 'Cartão de crédito',
+  'DEBIT_CARD' = 'Cartão de débito',
+  'MONEY' = 'Dinheiro',
+  'EMPTY' = ''
 }
 
 export const increaseQuantityAction = (payload: ICoffee) => ({
@@ -24,5 +32,10 @@ export const removeProductCartAction = (payload: ICoffee) => ({
 
 export const registerCostumerAddressAction = (payload: ICostumerAddress) => ({
   type: ActionTypes.REGISTER_COSTUMER_ADDRESS,
+  payload
+})
+
+export const selectPaymentMethodAddressAction = (payload: PaymentMethodTypes) => ({
+  type: ActionTypes.SELECT_PAYMENT_METHOD,
   payload
 })

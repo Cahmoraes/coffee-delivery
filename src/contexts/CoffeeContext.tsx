@@ -2,8 +2,10 @@ import { createContext, ReactNode, useCallback, useReducer } from 'react'
 import {
   decreaseQuantityAction,
   increaseQuantityAction,
+  PaymentMethodTypes,
   registerCostumerAddressAction,
   removeProductCartAction,
+  selectPaymentMethodAddressAction,
 } from '../reducers/cart/actions'
 import { cartReducer, IInicialState } from '../reducers/cart/reducer'
 import { Categories, coffeeList as seeders } from './seeders'
@@ -34,6 +36,7 @@ interface CoffeeContextData {
   decreaseProductAmount: (product: ICoffee) => void
   removeProductItemFromCart: (product: ICoffee) => void
   registerCostumerAddress: (costumerAddress: ICostumerAddress) => void
+  selectPaymentMethod: (paymentMethod: PaymentMethodTypes) => void
 }
 
 export const CoffeeContext = createContext({} as CoffeeContextData)
@@ -49,6 +52,7 @@ export function CoffeeProvider({ children }: CoffeeProviderProps) {
       catalogProducts: [] as ICoffee[],
       cartProducts: [] as ICoffee[],
       customerAddress: {} as ICostumerAddress,
+      paymentMethodSelected: PaymentMethodTypes.EMPTY,
     },
     (initialState) => {
       return {
@@ -81,6 +85,13 @@ export function CoffeeProvider({ children }: CoffeeProviderProps) {
     [],
   )
 
+  const selectPaymentMethod = useCallback(
+    (paymentMethod: PaymentMethodTypes) => {
+      dispatch(selectPaymentMethodAddressAction(paymentMethod))
+    },
+    [],
+  )
+
   return (
     <CoffeeContext.Provider
       value={{
@@ -89,6 +100,7 @@ export function CoffeeProvider({ children }: CoffeeProviderProps) {
         decreaseProductAmount,
         removeProductItemFromCart,
         registerCostumerAddress,
+        selectPaymentMethod,
       }}
     >
       {children}
