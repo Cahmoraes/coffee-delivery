@@ -31,8 +31,8 @@ export function OrderDetails() {
           <BadgeIcon variant="purple" element={<MapPinFillIcon />}>
             Entrega em <b>{customerAddress.rua}</b>
             <br />
-            {customerAddress.cidade}, {customerAddress.bairro} -{' '}
-            {customerAddress.uf}
+            {customerAddress.cidade}, {customerAddress.bairro},{' '}
+            {customerAddress.complemento} - {customerAddress.uf}
           </BadgeIcon>
 
           <BadgeIcon variant="yellow" element={<TimerFillIcon />}>

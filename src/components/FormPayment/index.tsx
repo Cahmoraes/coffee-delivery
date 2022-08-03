@@ -11,10 +11,10 @@ import { PaymentMethodButton } from '../PaymentMethodButton'
 import { FormHeader, FormMethods, FormPaymentContainer } from './styles'
 
 export function FormPayment() {
-  const [paymentMethodSelected, setPaymentMethodSelected] =
-    useState<PaymentMethodTypes>()
+  const { selectPaymentMethod, coffeeState } = useCoffee()
 
-  const { selectPaymentMethod } = useCoffee()
+  const [paymentMethodSelected, setPaymentMethodSelected] =
+    useState<PaymentMethodTypes>(coffeeState.paymentMethodSelected ?? '')
 
   function handleSelectPaymentMethod(paymentMethodType: PaymentMethodTypes) {
     setPaymentMethodSelected(paymentMethodType)
