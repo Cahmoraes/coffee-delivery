@@ -18,7 +18,7 @@ export function OrderDetails() {
 
   const { customerAddress } = coffeeState
 
-  if (!Object.keys(customerAddress).length) return
+  if (!Object.keys(customerAddress).length) return null
   return (
     <OrderDetailsContainer>
       <MessageConfirm>
