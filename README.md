@@ -11,7 +11,10 @@ Projeto construído como desafio proposto pela Rocketseat no programa Ignite.
 <a href="https://efficient-sloth-d85.notion.site/Desafio-02-Coffee-Delivery-30e42a21fdb44b09a85244fc2c3dbdf9">Instruções</a>
 
 ### :computer: Desktop
-<img align="center" src="https://github.com/Cahmoraes/coffee-delivery/blob/main/src/assets/demo/demo.gif" alt="Coffee Delivery">
+<p align="center">
+  <img src="https://github.com/Cahmoraes/coffee-delivery/blob/main/src/assets/demo/demo.gif" alt="Coffee Delivery">
+<p/>
+
 
 ### :book: Aprendizado
 - Utilização da arquitera Flux com hook useReducer.
